@@ -1,1 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mario Asunción Lopez</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+<body class="light">
+  <header>
+    <h1>Mario A.</h1>
+    <p>Backend and Web Developer | Machine Learning | Blockchain Enthusiast</p>
+    <div class="socials">
+      <a href="https://github.com/Marlup" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/4marlo4/" target="_blank">LinkedIn</a>
+      <a href="mailto:marsunlop@gmail.com">Email</a>
+    </div>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </header>
 
+  <section class="profile">
+    <table style="border: none; border-collapse: collapse; width: 100%;">
+      <tr>
+        <td style="border: none; padding: 0; width: 40%;">
+          <div style="overflow: hidden; border-radius: 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.2);">
+            <img src="https://raw.githubusercontent.com/Marlup/marlup.github.io/main/me_1.jpg" alt="Profile Picture" width="100%" onerror="this.onerror=null; this.src='me_1.jpg';">
+          </div>
+        </td>
+        <td style="border: none; padding-left: 20px; vertical-align: top;" width="60%">
+          <h2>👋 About Me</h2>
+          <p>I'm Mario, a junior backend and web developer who loves finding meaning in data and building useful things. I'm curious about how technology — especially in areas like blockchain — can solve real-world problems. I care deeply about learning, growing, and doing work that makes a positive difference for others.</p>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>💼 How I Work</h2>
+    <p>I enjoy working in environments that value trust, autonomy, and collaboration. Whether I’m tackling a problem on my own or working with a team, I like to plan ahead and keep things clear and organized. My focus is on building solid solutions, sharing what I learn, and supporting those around me — both technically and personally.</p>
+  </section>
+
+  <section>
+    <h2>🎯 What Drives Me</h2>
+    <ul>
+      <li>Cats.</li>
+      <li>Animal Welfare Awareness.</li>
+      <li>Genuine connections.</li>
+      <li>Emotional Intelligence.</li>
+      <li>Empowering people independence through individualism and collectivism.</li>
+    </ul>
+  </section>
+
+  <section class="charts">
+    <h2>📊 Skill Chart</h2>
+    <div style="width: 300px; height: 300px; margin: auto;">
+      <canvas id="languagesChart"></canvas>
+    </div>
+  </section>
+
+  <section>
+    <h2>🧠 Skill Breakdown</h2>
+    <div class="skills-list">
+      <div><strong>Languages:</strong> Python, Java, R, SQL.</div>
+      <div><strong>Machine Learning frameworks:</strong> PyTorch, TensorFlow, Scikit-learn.</div>
+      <div><strong>Backend frameworks:</strong> Django, FastAPI and Spring Boot.</div>
+      <div><strong>Libraries & Data Tools:</strong> Polars, Modis, Plotly, Dask.</div>
+      <div><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, Redis.</div>
+      <div><strong>Cloud</strong> EC2 & S3 (AWS) and Google Cloud (Firebase & Scheduler).</div>
+      <div><strong>DevOps:</strong> Docker and Kubernetes (Azure).</div>
+      <div><strong>CI and life cycle:</strong> Testing Git, GitHub Actions, Trello.</div>
+      <div><strong>IDEs:</strong>JupyterLab, VS Code, Spider and IntelliJ</div>
+    </div>
+  </section>
+
+  <section>
+    
+    <h2>🚀 Personal Projects</h2>
+    <h3>Shary-demo</h3>
+    <p><strong>Description:</strong> Shary is a cross-platform application for mobile and desktop that enables users to securely manage and share data stored directly on their devices. It emphasizes privacy through end-to-end encryption and operates with minimal reliance on a web backend or centralized databases. Shary is designed for seamless semi-peer-to-peer sharing, giving users full control over their information.</p>
+    <p><strong>Technologies Used:</strong> Python (kivy & kivyMD), SQLITE and Google Cloud.</p>
+    <p><strong>GitHub Repo:</strong> <a href="https://github.com/Marlup/Shary" target="_blank">Shary Demo</a></p>
+    
+    <h3>News Synthesizer</h3>
+    <p><strong>Description:</strong> A web prototype that synthesizes news from top digital media in your country using GPT.</p>
+    <p><strong>Technologies Used:</strong> Python, SQL, Java, Angular</p>
+    <p><strong>GitHub Repo:</strong> <a href="https://github.com/Marlup/Expected-news" target="_blank">Expected News</a></p>
+
+    <h3>Wealth Simulator</h3>
+    <p><strong>Description:</strong> It's a lightweight visual application for interests based investments. Users can setup multiple parameters to simulate their long term returns and balances. They can also have download the data from simulation, like taxes or gross earnings on each earning-term.</p>
+    <p><strong>Technologies Used:</strong> Javascript (Plotly), HTML and CSS</p>
+    <p><strong>GitHub Repo:</strong> <a href="https://github.com/Marlup/wealth-simulator" target="_blank">Wealth Simulator</a></p>
+</section>
+
+  <section>
+    <h2>📚 What I'm Currently Learning</h2>
+    <p>I'm currently diving into Systems Design and efficient Programming practices, focusing on Golang. This will enhance my ability to build more efficient and scalable solutions.</p>
+  </section>
+
+  <section class="buymeacoffee">
+    <h2>☕ Buy Me a Coffee</h2>
+    <p>If you enjoy my work and want to support it, consider buying me a coffee!</p>
+    <a href="https://www.buymeacoffee.com/your-username" target="_blank">Support Me</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mario Asunción Lopez. Made with ❤️ and coffee.</p>
+  </footer>
+
+  <script>
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    function setTheme(theme) {
+      body.className = theme;
+      localStorage.setItem('theme', theme);
+      toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const newTheme = body.className === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+    });
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+
+    // Chart
+    const ctx = document.getElementById('languagesChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Python', 'Java', 'R', 'SQL'],
+        datasets: [{
+          label: 'Skill Proficiency (%)',
+          data: [50, 30, 10, 10],
+          backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        layout: {
+          padding: 10
+        },
+        plugins: {
+          legend: {
+            position: 'bottom'
+          },
+          tooltip: {
+            enabled: false
+          },
+          datalabels: {
+            display: true,
+            color: '#000'
+          }
+        }
+      },
+      plugins: [ChartDataLabels]
+    });
+  </script>
+</body>
+</html>
